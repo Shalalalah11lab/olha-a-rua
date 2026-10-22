@@ -1,0 +1,1094 @@
+<title>Fabiola Viveros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<style>
+/* Layout concept: one framed sheet divided by hairlines. A small-caps header, a name set large
+   in the lower left of an open field with a print registration mark in the upper right, then a
+   numbered index of sections that open in place. Black and white only. The red grease pencil
+   circle on selected frames is the single accent. Built desktop first, then iPad, then iPhone. */
+:root {
+  --paper: #F1EEE6;
+  --card: #E6E2D8;
+  --dots: radial-gradient(circle at 1px 1px, rgba(11, 11, 11, 0.09) 0.8px, transparent 1.1px);
+  --red: #FE5241;
+  --blue: #3064B6;
+  --a1: var(--red); --a1-ink: #0B0B0B;
+  --a2: var(--blue); --a2-ink: #FFFFFF;
+  --ink: #0B0B0B;
+  --soft: #6B6B68;
+  --line: #161616;
+  --mark: #FE5241;
+  --p0: #222221;
+  --p1: #D4D4D1;
+  --p2: #A6A6A2;
+  --p3: #6F6F6B;
+  --p4: #E7E7E4;
+  --ui: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+  --rule: 1px;
+  --pad: clamp(1rem, 2.4vw, 2.25rem);
+  --gap: clamp(1rem, 2vw, 2rem);
+  --head-h: 48px;
+  --t-label: 0.75rem;
+  --t-lead: clamp(1.35rem, 2.4vw, 2.1rem);
+  --t-title: clamp(1.7rem, 3.6vw, 3.2rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B0B0B; --card: #151514; --ink: #F2F2EF; --soft: #9B9B96; --line: #C8C8C3; --mark: #3064B6; --a1: var(--blue); --a1-ink: #FFFFFF; --a2: var(--red); --a2-ink: #0B0B0B; --dots: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 0.8px, transparent 1.1px);
+    --p0: #080808; --p1: #2A2A28; --p2: #3A3A37; --p3: #6A6A64; --p4: #1E1E1D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0B0B0B; --card: #151514; --ink: #F2F2EF; --soft: #9B9B96; --line: #C8C8C3; --mark: #3064B6; --a1: var(--blue); --a1-ink: #FFFFFF; --a2: var(--red); --a2-ink: #0B0B0B; --dots: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 0.8px, transparent 1.1px);
+  --p0: #080808; --p1: #2A2A28; --p2: #3A3A37; --p3: #6A6A64; --p4: #1E1E1D;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--paper); background-image: var(--dots); background-size: 6px 6px; color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.55;
+  padding-block: clamp(12px, 2.2vw, 28px);
+  padding-left: max(clamp(12px, 2.2vw, 28px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(12px, 2.2vw, 28px), env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: -3px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+
+.sheet { max-width: 1680px; margin-inline: auto; border: var(--rule) solid var(--line); background: var(--paper); background-image: var(--dots); background-size: 6px 6px; }
+.mono { font-family: var(--mono); font-size: var(--t-label); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; }
+.disp { font-family: var(--ui); font-weight: 500; letter-spacing: -0.04em; line-height: 0.94; }
+
+/* Header */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); background-image: var(--dots); background-size: 6px 6px; display: flex; flex-wrap: wrap; align-items: stretch; border-bottom: var(--rule) solid var(--line); font-family: var(--ui); }
+.logo { display: flex; align-items: center; padding: 0 clamp(0.7rem, 1.4vw, 1.1rem); min-height: var(--head-h); text-decoration: none; }
+.logo b { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 0.6875rem; letter-spacing: 0.1em; padding: 0.55rem 1rem; line-height: 1; }
+.grow { flex: 1 1 auto; display: flex; align-items: center; padding: 0 1rem; font: 400 0.6875rem/1.2 var(--ui); letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); min-width: 0; }
+@media (max-width: 1099px) { .grow { font-size: 0; padding: 0; } }
+.links { display: flex; }
+.nav, .theme, .menu { display: flex; align-items: center; justify-content: center; min-height: var(--head-h); padding: 0 clamp(0.7rem, 1.5vw, 1.3rem); font: 500 0.6875rem/1 var(--ui); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.nav[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.nav.last { font-weight: 700; }
+.menu { display: none; }
+@media (hover: hover) { .nav:hover, .theme:hover, .menu:hover { background: var(--ink); color: var(--paper); } }
+
+/* Ticker */
+.edge { display: block; overflow: hidden; white-space: nowrap; background: var(--a1); color: var(--a1-ink); padding: 0.55rem 0; text-decoration: none; border-bottom: var(--rule) solid var(--line); }
+.edge[hidden] { display: none; }
+.edge .track { display: inline-flex; width: max-content; animation: slide 40s linear infinite; }
+.edge .track span { padding-right: 1.4rem; }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (hover: hover) { .edge:hover .track { animation-play-state: paused; } .edge:hover { background: var(--a1-ink); color: var(--a1); } }
+
+/* Home hero */
+.hero { container-type: inline-size; display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: clamp(2rem, 6vw, 4rem) var(--gap); min-height: clamp(30rem, calc(100svh - 7.5rem), 60rem); padding: var(--pad); padding-bottom: clamp(2.5rem, 5vw, 5rem); border-bottom: var(--rule) solid var(--line); }
+.hero-quote { margin: 0; max-width: min(36ch, 100%); justify-self: end; width: min(36ch, 100%); }
+.hero-quote blockquote { margin: 0; font: 400 0.9375rem/1.45 var(--ui); }
+.hero-quote figcaption { display: block; padding: 0; margin-top: 0.75rem; color: var(--soft); }
+.hero-name { align-self: end; font-family: var(--ui); font-weight: 400; letter-spacing: -0.05em; line-height: 0.88; font-size: clamp(3.2rem, 21cqw, 9rem); }
+@media (min-width: 900px) {
+  .hero { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; }
+  .hero-quote { grid-column: 9 / -1; grid-row: 1; align-self: start; max-width: none; width: auto; justify-self: stretch; }
+  .hero-name { grid-column: 1 / 9; grid-row: 2; font-size: clamp(4rem, 12.5cqw, 13rem); }
+}
+
+/* Index accordion */
+.acc-row { display: grid; grid-template-columns: minmax(3.5rem, 11%) 1fr auto; align-items: center; column-gap: 1rem; width: 100%; min-height: 48px; padding: 0 var(--pad); border-bottom: var(--rule) solid var(--line); text-align: left; font-family: var(--ui); scroll-margin-top: calc(var(--head-h) + env(safe-area-inset-top, 0px) + 4px); }
+a.acc-row { text-decoration: none; color: inherit; }
+.acc-row .num { font-size: 0.8125rem; color: var(--soft); font-variant-numeric: tabular-nums; }
+.acc-row .lab-r { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.acc-row svg { display: block; }
+@media (hover: hover) { .acc-row:hover { background: var(--a1); color: var(--a1-ink); } .acc-row:hover .num { color: inherit; } }
+.copy { margin-top: 1.25rem; background: var(--ink); color: var(--paper); font: 500 0.6875rem/1 var(--ui); letter-spacing: 0.06em; text-transform: uppercase; padding: 0 1.25rem; min-height: 48px; }
+@media (hover: hover) { .copy:hover { background: var(--mark); color: #fff; } }
+
+/* View header */
+.vhead { border-bottom: var(--rule) solid var(--line); display: grid; container-type: inline-size; }
+.vhead h1 { font-size: clamp(2.6rem, 11vw, 6rem); font-size: min(11rem, calc((100cqw - 2 * var(--pad)) / 5.6)); padding: var(--pad); padding-top: clamp(2rem, 6vw, 5rem); padding-bottom: clamp(1.25rem, 3vw, 2.5rem); font-weight: 400; letter-spacing: -0.05em; line-height: 0.9; }
+.vhead .vmeta { display: flex; flex-wrap: wrap; border-top: var(--rule) solid var(--line); }
+.vhead .vmeta > * { padding: 0.65rem var(--pad); border-right: var(--rule) solid var(--line); flex: 1 1 14rem; }
+.vhead .vmeta > :last-child { border-right: 0; }
+.note { padding: 0.7rem var(--pad); border-bottom: var(--rule) solid var(--line); background: var(--ink); color: var(--paper); }
+
+/* Frames */
+.art { position: relative; width: 100%; overflow: hidden; background: var(--p1); }
+.art svg, .art img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+.polaroid .art { border: 10px solid var(--card); border-bottom-width: 36px; box-sizing: border-box; }
+.ph { position: absolute; left: 0.4rem; top: 0.4rem; background: var(--paper); color: var(--ink); padding: 0.1rem 0.4rem; font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; z-index: 2; }
+.circle { position: absolute; inset: -4% -4%; width: 108%; height: 108%; z-index: 3; pointer-events: none; overflow: visible; }
+.circle path { fill: none; stroke: var(--mark); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+figcaption { padding: 0.55rem 0; display: flex; flex-direction: column; gap: 0.1rem; }
+figcaption .l2 { color: var(--soft); }
+
+/* Gallery */
+.g-bar { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.5rem; align-items: center; padding: var(--pad); padding-bottom: calc(var(--pad) * 0.6); }
+.g-bar .grp { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.g-bar .grp.r { justify-content: flex-end; }
+.pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 1rem; border-radius: 999px; background: var(--card); color: var(--soft); font: 500 0.6875rem/1 var(--ui); letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: color 0.15s; }
+.pill[aria-current="page"] { background: #3A3A38; color: #FFF; }
+.pill.mid { background: var(--ink); color: var(--paper); max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+@media (hover: hover) { a.pill:hover { color: var(--ink); } a.pill[aria-current="page"]:hover { color: #FFF; } }
+.g-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 760px) { .g-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .g-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.g-item { display: block; min-width: 0; text-decoration: none; }
+.g-matte { position: relative; aspect-ratio: 4 / 5; display: grid; place-items: center; background: #0A0A0A; }
+.g-matte.light { background: #ECECE9; }
+.g-matte .art { width: 62%; }
+.g-matte .ph { left: 0.5rem; top: 0.5rem; }
+.g-title { display: block; padding: 0.7rem 0.9rem 1.5rem; font: 500 0.6875rem/1.3 var(--ui); letter-spacing: 0.05em; text-transform: uppercase; color: var(--soft); transition: color 0.15s; }
+.g-item:hover .g-title, .g-item:focus-visible .g-title { color: var(--ink); }
+.g-note { padding: 0 var(--pad) var(--pad); color: var(--soft); }
+.s-head { padding: clamp(1.25rem, 4vw, 3.5rem) var(--pad) var(--pad); }
+.s-head h1 { font-size: clamp(2.4rem, 7vw, 6.5rem); font-weight: 400; letter-spacing: -0.045em; line-height: 0.95; overflow-wrap: anywhere; }
+.s-head p { margin-top: 0.9rem; color: var(--soft); }
+.car { border-top: var(--rule) solid var(--line); }
+.car-stage { position: relative; display: grid; place-items: center; background: #0A0A0A; height: min(78vh, 56rem); min-height: 22rem; padding: clamp(1rem, 4vw, 3rem); touch-action: pan-y; }
+.car-stage .s-img { position: relative; margin: 0; height: 100%; aspect-ratio: var(--rn, 1.5); max-width: 100%; }
+.car-stage .s-img .art { height: 100%; }
+.car-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 999px; background: #FFF; color: #0B0B0B; font: 500 1.25rem/1 var(--ui); display: grid; place-items: center; z-index: 4; }
+.car-arrow.prev { left: clamp(0.5rem, 2vw, 1.5rem); }
+.car-arrow.next { right: clamp(0.5rem, 2vw, 1.5rem); }
+@media (hover: hover) { .car-arrow:hover { background: #D8D8D4; } }
+.car-bar { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem var(--pad); border-top: var(--rule) solid var(--line); color: var(--soft); }
+.car-count { color: var(--ink); }
+.s-info { border-top: var(--rule) solid var(--line); margin: 0; }
+.s-info > div { display: grid; grid-template-columns: 8rem 1fr; border-bottom: var(--rule) solid var(--line); }
+.s-info dt, .s-info dd { margin: 0; padding: 0.6rem var(--pad); }
+.s-info dt { color: var(--soft); }
+.g-foot { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: space-between; padding: var(--pad); }
+.empty { padding: var(--pad); }
+
+/* Projects */
+.p-link { align-self: flex-start; font: 500 0.8125rem/1.2 var(--ui); text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none; border-bottom: var(--rule) solid var(--line); padding-block: 0.7rem 0.2rem; display: inline-block; }
+@media (hover: hover) { .p-link:hover { background: var(--ink); color: var(--paper); } }
+
+/* Essays */
+.essay { display: grid; gap: 0.5rem 1.5rem; padding: 1.25rem var(--pad); border-bottom: var(--rule) solid var(--line); text-decoration: none; grid-template-columns: 1fr auto; }
+@media (hover: hover) { .essay:hover { background: var(--ink); color: var(--paper); } .essay:hover .e-dek, .essay:hover .e-date { color: inherit; } }
+.e-date { grid-column: 1 / -1; color: var(--soft); }
+.e-body { min-width: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.e-title { font-size: var(--t-title); line-height: 1.04; font-weight: 500; font-variation-settings: "opsz" 72; letter-spacing: -0.01em; text-wrap: balance; }
+.e-dek { color: var(--soft); max-width: 56ch; }
+.e-tag { grid-column: 1 / -1; }
+.e-go { grid-column: 2; grid-row: 2; font-family: var(--ui); font-weight: 500; font-size: 1.6rem; align-self: start; }
+@media (min-width: 900px) {
+  .essay { grid-template-columns: 9rem 1fr 11rem auto; align-items: start; }
+  .e-date, .e-tag { grid-column: auto; }
+  .e-go { grid-column: auto; grid-row: auto; }
+}
+.acc { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: baseline; width: 100%; text-align: left; padding: 1.1rem var(--pad); border-bottom: var(--rule) solid var(--line); min-height: 56px; }
+.acc .acc-t { font-size: clamp(1.8rem, 4.5vw, 3.4rem); }
+.acc .acc-i { font-family: var(--ui); font-weight: 400; font-size: 2rem; line-height: 1; min-width: 1.2ch; text-align: center; }
+@media (hover: hover) { .acc:hover { background: var(--ink); color: var(--paper); } }
+.feat { border-bottom: var(--rule) solid var(--line); }
+.feat .essay { border-bottom: 0; padding-block: clamp(1.5rem, 4vw, 3rem); }
+.feat .e-title { font-size: clamp(2rem, 5.5vw, 4.6rem); }
+
+/* Essay page: big caps heading left, small dense text right, photos edge to edge */
+.eb { display: grid; gap: 1.25rem var(--gap); padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad); border-top: var(--rule) solid var(--line); min-width: 0; }
+@media (min-width: 900px) { .eb.two { grid-template-columns: 5fr 7fr; } }
+.eb-h, .eb-h2 { font: 400 clamp(2rem, 4.6vw, 4.2rem)/0.98 var(--ui); text-transform: uppercase; letter-spacing: -0.035em; overflow-wrap: anywhere; text-wrap: balance; }
+.eb-h2 { font-size: clamp(1.7rem, 3.6vw, 3.4rem); }
+.eb-r { min-width: 0; max-width: 64ch; font: 400 0.9375rem/1.5 var(--ui); }
+.eb-r p { margin: 0 0 1em; }
+.eb-r hr { border: 0; border-top: var(--rule) solid var(--line); margin: 1.6em 0 1em; }
+.eb-r a { text-underline-offset: 2px; }
+.eb-meta { color: var(--soft); margin: 0 0 1.25em !important; }
+.r-h { display: block; font: 400 clamp(1.3rem, 2.2vw, 2rem)/1.05 var(--ui); text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 0.4em; }
+.r-t { display: block; font: 400 clamp(1.2rem, 1.8vw, 1.6rem)/1.15 var(--ui); letter-spacing: -0.015em; }
+.r-m { display: block; font: 400 0.6875rem/1.4 var(--ui); color: var(--soft); }
+.eb-ph { margin: 0; border-top: var(--rule) solid var(--line); position: relative; }
+.eb-ph.inset { padding: var(--pad); }
+.eb-ph .art { min-height: 6rem; }
+.eb-ph img.nat { position: static; height: auto; display: block; width: 100%; }
+.eb-ph figcaption { padding: 0.6rem var(--pad) 0.2rem; color: var(--soft); font: 400 0.75rem/1.4 var(--ui); }
+.eb-pair { display: grid; grid-template-columns: 1fr; border-top: var(--rule) solid var(--line); }
+@media (min-width: 700px) { .eb-pair { grid-template-columns: 1fr 1fr; } .eb-pair .eb-ph + .eb-ph { border-left: var(--rule) solid var(--line); } }
+.eb-pair .eb-ph { border-top: 0; }
+.eb-end { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+.eb-end .p-link { padding-block: 0.2rem; }
+.empty-note { padding: var(--pad); color: var(--soft); }
+button.pill { border: 0; cursor: pointer; }
+.pill[hidden] { display: none; }
+button.pill.on { background: var(--mark); color: #FFF; }
+
+/* Essay editor (owner only) */
+.ed-tools { position: sticky; top: var(--head-h); z-index: 20; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding: 0.6rem var(--pad); background: var(--paper); border-bottom: var(--rule) solid var(--line); }
+.ed-tools .st { flex: 1 1 14rem; color: var(--soft); }
+.ed-card { border-top: var(--rule) solid var(--line); padding: var(--pad); display: grid; gap: 0.75rem; }
+.ed-card .hd { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: space-between; }
+.ed-card .hd .grp { display: flex; gap: 0.35rem; }
+.ed-card label { display: grid; gap: 0.25rem; color: var(--soft); }
+.ed-card input[type=text], .ed-card textarea, .ed-card select, .ed-card input[type=url] { font: 400 0.9375rem/1.4 var(--ui); width: 100%; border: var(--rule) solid var(--line); background: var(--paper); color: var(--ink); padding: 0.55rem 0.65rem; border-radius: 0; }
+.ed-card textarea { min-height: 9rem; resize: vertical; }
+.ed-row { display: grid; gap: 0.75rem; }
+@media (min-width: 700px) { .ed-row { grid-template-columns: 1fr 1fr; } }
+.ed-thumb { max-width: 16rem; position: relative; }
+.ed-hint { color: var(--soft); }
+.ed-add { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: var(--pad); border-top: var(--rule) solid var(--line); }
+
+/* About */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ab-top { margin-inline: var(--pad); padding-block: 0.95rem; border-bottom: var(--rule) solid var(--line); }
+.ab-hero { padding: var(--pad); display: grid; grid-template-columns: clamp(9.5rem, 40%, 24rem) 1fr; }
+.ab-photo { margin: 0; position: relative; }
+.ab-photo .art { background: var(--p1); }
+.ab-id { padding: 0 var(--pad) var(--pad); display: flex; flex-direction: column; gap: 1.5rem; }
+.ab-role { font: 400 clamp(1.9rem, 4vw, 3.4rem)/1.02 var(--ui); letter-spacing: -0.04em; max-width: 20ch; text-wrap: balance; }
+.ab-loc .mono { color: var(--soft); }
+.ab-loc p { font: 400 1.0625rem/1.3 var(--ui); margin-top: 0.35rem; }
+.ab-rule { height: 1px; background: var(--line); margin-inline: var(--pad); }
+.ab-about { padding: var(--pad); display: grid; gap: 1rem; }
+.ab-lab { color: var(--soft); }
+.ab-text p { font: 400 clamp(1.05rem, 1.5vw, 1.4rem)/1.45 var(--ui); max-width: 44ch; }
+.ab-text p + p { margin-top: 1rem; }
+@media (min-width: 900px) { .ab-about { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); } }
+.ab-cardwrap { padding: 0 var(--pad) var(--pad); }
+.ccard { background: var(--p1); color: var(--ink); padding: clamp(1rem, 2vw, 1.6rem); container-type: inline-size; max-width: 64rem; }
+.cc-top { display: flex; justify-content: space-between; }
+.cc-main { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--gap); margin-top: clamp(1.5rem, 4vw, 3rem); }
+.cc-info { min-width: 0; flex: 1 1 auto; }
+.cc-name { font: 400 clamp(1.6rem, 3vw, 2.4rem)/1.05 var(--ui); letter-spacing: -0.03em; }
+.cc-list { list-style: none; margin: 1.25rem 0 0; padding: 0; }
+.cc-list li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); align-items: center; border-top: var(--rule) solid color-mix(in srgb, var(--ink) 30%, transparent); }
+.cc-copy { display: flex; align-items: center; justify-content: flex-start; gap: 0.6rem; min-height: 48px; font: 400 1rem/1.25 var(--ui); text-align: left; overflow-wrap: anywhere; }
+.cc-arrow { flex: 0 0 auto; font-size: 0.8rem; }
+@media (hover: hover) { .cc-copy:hover .cc-val { text-decoration: underline; text-underline-offset: 3px; } }
+.dots { flex: 0 0 auto; width: clamp(4.5rem, 22cqw, 13rem); aspect-ratio: 1.25; background-image: radial-gradient(circle, var(--ink) 1.5px, transparent 1.9px); background-size: 12px 12px; }
+.cc-foot { margin-top: 1.25rem; }
+@media (max-width: 559px) { .cc-list li { grid-template-columns: 1fr; padding-top: 0.5rem; } .cc-copy { min-height: 44px; } }
+
+/* Contact */
+.clinks { border-bottom: var(--rule) solid var(--line); }
+.crow { display: grid; grid-template-columns: 7rem 1fr auto; gap: 1rem; align-items: center; padding: 1rem var(--pad); text-decoration: none; }
+.crow + .crow { border-top: var(--rule) solid var(--line); }
+.crow .cv { font-family: var(--ui); letter-spacing: -0.02em; font-size: clamp(1.1rem, 2.4vw, 1.8rem); overflow-wrap: anywhere; }
+.crow .mono { color: var(--soft); }
+@media (hover: hover) { .crow:hover { background: var(--ink); color: var(--paper); } .crow:hover .mono { color: inherit; } }
+.addr .a a { text-decoration: none; }
+.soc-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.soc { display: grid; place-items: center; width: 44px; height: 44px; border: var(--rule) solid var(--line); color: var(--ink); text-decoration: none; }
+.soc svg { width: 22px; height: 22px; }
+a.soc:hover, a.soc:focus-visible { background: var(--a2); border-color: var(--a2); color: var(--a2-ink); }
+.soc.off { opacity: 0.4; border-style: dashed; cursor: not-allowed; }
+.inq { display: grid; grid-template-columns: 1fr; }
+.inq > div { padding: var(--pad); border-bottom: var(--rule) solid var(--line); display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
+.inq h2 { font-size: clamp(1.7rem, 3.2vw, 2.6rem); }
+.inq p { color: var(--soft); max-width: 40ch; }
+@media (min-width: 760px) {
+  .inq { grid-template-columns: 1fr 1fr; }
+  .inq > div:nth-child(odd) { border-right: var(--rule) solid var(--line); }
+}
+.addr { display: flex; flex-wrap: wrap; border-bottom: var(--rule) solid var(--line); }
+.addr > * { padding: 1rem var(--pad); }
+.addr .a { flex: 1 1 18rem; font-family: var(--ui); letter-spacing: -0.03em; font-size: clamp(1.4rem, 3.6vw, 3rem); overflow-wrap: anywhere; user-select: all; line-height: 1.1; }
+.addr .copy { margin: 0; flex: 0 0 auto; }
+
+/* Selected work (projects page): heavy title, ruled list, small image on the right */
+.work-head { border-bottom: 0; }
+.work-head h1 { font-family: var(--ui); font-size: clamp(2.8rem, 15vw, 6rem); font-size: min(10rem, calc((100cqw - 2 * var(--pad)) / 6.3)); font-weight: 800; text-transform: uppercase; letter-spacing: -0.035em; line-height: 0.86; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.work-sub-l { padding: 0 var(--pad) clamp(1rem, 2vw, 1.5rem); color: var(--soft); }
+.work { padding: 0; }
+.work-row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--gap); padding: clamp(1.25rem, 2.4vw, 2.25rem) var(--pad); color: inherit; text-decoration: none; }
+.work-row::before { content: ""; position: absolute; top: 0; left: var(--pad); right: var(--pad); height: 2px; background: var(--ink); }
+.work-row:active { background: var(--a1); color: var(--a1-ink); }
+@media (hover: hover) { .work-row:hover, .work-row:focus-visible { background: var(--a1); color: var(--a1-ink); } .work-row:hover::before, .work-row:focus-visible::before { background: var(--a1-ink); } .work-row:hover .work-sub, .work-row:focus-visible .work-sub { color: inherit; } }
+.work-main { min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
+.work-t { font: 400 clamp(2rem, 9.4vw, 3.2rem)/1.02 var(--ui); text-transform: uppercase; letter-spacing: -0.015em; overflow-wrap: anywhere; }
+.work-date { font: 400 0.8125rem/1.3 var(--ui); text-transform: uppercase; letter-spacing: 0.01em; }
+.work-sub { color: var(--soft); }
+.work-thumb { display: block; width: clamp(6.5rem, 26vw, 16rem); align-self: start; }
+.work-note { padding: var(--pad); color: var(--soft); border-top: 2px solid var(--ink); margin: 0 var(--pad); padding-inline: 0; }
+@media (min-width: 700px) {
+  .work-t { font-size: clamp(3rem, 6vw, 6rem); line-height: 0.98; }
+  .work-thumb { width: clamp(10rem, 18vw, 17rem); }
+}
+
+/* Footer */
+.foot { display: grid; border-top: 0; }
+.foot > * { padding: var(--pad); min-width: 0; }
+.foot > * + * { border-top: var(--rule) solid var(--line); }
+.foot .sub { background: var(--card); display: block; width: 100%; text-align: left; font: inherit; color: inherit; }
+.foot .sub .mono, .foot .sub .sub-t, .foot .sub .sub-more { display: block; }
+.foot .sub .sub-t { margin-top: 0.5rem; font-size: 1.0625rem; line-height: 1.55; }
+.foot .sub .sub-more { margin-top: 0.5rem; font: 400 0.875rem/1.45 var(--ui); }
+.foot .sub[aria-pressed="true"] { background: var(--a2); color: var(--a2-ink); }
+@media (min-width: 900px) {
+  .foot { grid-template-columns: 1fr 1fr 1fr; }
+  .foot > * + * { border-top: 0; border-left: var(--rule) solid var(--line); }
+}
+
+/* iPad */
+/* iPhone */
+@media (max-width: 759px) {
+  .menu { display: flex; }
+  .links { flex: 1 1 100%; order: 5; display: none; flex-direction: column; border-top: var(--rule) solid var(--line); }
+  .links.open { display: flex; }
+  .links .nav { justify-content: space-between; border-left: 0; border-bottom: var(--rule) solid var(--line); min-height: 52px; font-size: 0.8125rem; padding: 0 var(--pad); }
+  .links .nav:last-child { border-bottom: 0; }
+  .hero { min-height: clamp(30rem, calc(100svh - 6rem), 52rem); }
+  .g-bar { grid-template-columns: 1fr; }
+  .g-bar .mid-wrap { order: -1; }
+  .g-bar .grp.r { justify-content: flex-start; }
+  .s-info > div { grid-template-columns: 6rem 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge .track { animation: none; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.38"/></feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<div class="sheet">
+  <a class="edge mono" id="ticker" href="#printclub" aria-label="Prints available. Go to the Print Club."><span class="track" aria-hidden="true"></span></a>
+  <header class="bar">
+    <a class="logo" href="#index" aria-label="Fabiola Viveros, home"><b>FV</b></a>
+    <span class="grow">Art historian, photographer and Engineer</span>
+    <nav class="links" id="links" aria-label="Main">
+      <a class="nav" href="#gallery" data-nav="gallery">Gallery</a>
+      <a class="nav" href="#projects" data-nav="projects">Projects</a>
+      <a class="nav" href="#essays" data-nav="essays">Essays</a>
+      <a class="nav" href="#printclub" data-nav="printclub">Print Club</a>
+      <a class="nav" href="#about" data-nav="about">About</a>
+      <a class="nav last" href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">Dark</button>
+    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="links">Menu</button>
+  </header>
+
+  <main id="views">
+
+    <!-- INDEX -->
+    <section class="view" data-view="index">
+      <div class="hero">
+        <figure class="hero-quote">
+          <blockquote>&ldquo;To me, photography is the simultaneous recognition, in a fraction of a second, of the significance of an event as well as of a precise organization of forms which give that event its proper expression.&rdquo;</blockquote>
+          <figcaption class="mono">Henri Cartier-Bresson, <i>The Decisive Moment</i>, 1952</figcaption>
+        </figure>
+        <h1 class="hero-name">Fabiola<br>Viveros</h1>
+      </div>
+      <div id="acc"></div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="view" data-view="gallery" hidden>
+      <div class="g-bar">
+        <div class="grp"><a class="pill" id="pIndex" href="#gallery">Index</a><a class="pill" href="#about">Info</a><a class="pill" href="#printclub">Print Club &#8599;</a></div>
+        <div class="mid-wrap"><span class="pill mid" id="gMid">Gallery</span></div>
+        <div class="grp r"><a class="pill" href="#index">Home</a></div>
+      </div>
+      <div id="gIndex">
+        <div class="vhead work-head"><h1>Olha<br>a Rua<span class="sr"> Gallery</span></h1><p class="mono work-sub-l">Gallery</p></div>
+        <div class="g-grid" id="gGrid"></div>
+        <p class="g-note mono">Placeholder images and sample set names. Rename, add or remove sets freely.</p>
+      </div>
+      <div id="gSet" hidden>
+        <div class="s-head"><h1 id="sTitle"></h1><p class="mono" id="sSub"></p></div>
+        <div class="car" id="car" role="group" aria-roledescription="carousel" aria-label="Frames in this set">
+          <div class="car-stage" id="carStage"><button type="button" class="car-arrow prev" id="carPrev" aria-label="Previous frame">&larr;</button><div id="carImg" style="display:contents"></div><button type="button" class="car-arrow next" id="carNext" aria-label="Next frame">&rarr;</button></div>
+          <div class="car-bar mono"><span class="car-count" id="carCount" aria-live="polite"></span><span id="carCap"></span></div>
+        </div>
+        <dl class="s-info mono" id="sInfo"></dl>
+        <div class="g-foot" id="sFoot"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="view" data-view="projects" hidden>
+      <div class="g-bar">
+        <div class="grp"><a class="pill" id="pjIndex" href="#projects">Index</a><a class="pill" href="#about">Info</a><a class="pill" href="#gallery">Gallery &#8599;</a></div>
+        <div class="mid-wrap"><span class="pill mid" id="pjMid">Projects</span></div>
+        <div class="grp r"><a class="pill" href="#index">Home</a></div>
+      </div>
+      <div id="pjList">
+        <div class="vhead work-head"><h1>Selected<br>work</h1></div>
+        <div class="work" id="projList"></div>
+        <p class="mono work-note">Placeholder images until your photographs go in.</p>
+      </div>
+      <div id="pjSet" hidden></div>
+    </section>
+
+    <!-- ESSAYS -->
+    <section class="view" data-view="essays" hidden>
+      <div class="g-bar">
+        <div class="grp"><a class="pill" id="pEIndex" href="#essays">Index</a><a class="pill" href="#about">Info</a><a class="pill" href="#printclub">Print Club &#8599;</a></div>
+        <div class="mid-wrap"><span class="pill mid" id="eMid">Essays</span></div>
+        <div class="grp r"><button type="button" class="pill" id="eEdit" hidden>Edit</button><a class="pill" href="#index">Home</a></div>
+      </div>
+      <div id="eList">
+        <div class="vhead">
+          <h1 class="disp">Essays</h1>
+          <div class="vmeta mono"><span id="eCount">Essays</span><span>Read here, also on Substack</span></div>
+        </div>
+        <div id="eTools1"></div>
+        <div class="feat"><span class="mono" style="display:block;padding:var(--pad);padding-bottom:0">Latest</span><div id="essayFeat"></div></div>
+        <button class="acc" id="accBtn" type="button" aria-expanded="false" aria-controls="essayList">
+          <span class="acc-t disp">All essays</span><span class="mono" id="eCount2"></span><span class="acc-i" id="accI" aria-hidden="true">+</span>
+        </button>
+        <div id="essayList" hidden></div>
+      </div>
+      <div id="ePage" hidden></div>
+    </section>
+
+    <!-- PRINT CLUB -->
+    <section class="view" data-view="printclub" hidden>
+      <div class="g-bar">
+        <div class="grp"><a class="pill" id="pcIndex" href="#printclub">Index</a><a class="pill" href="#about">Info</a><a class="pill" href="#gallery">Gallery &#8599;</a></div>
+        <div class="mid-wrap"><span class="pill mid" id="pcMid">Print Club</span></div>
+        <div class="grp r"><a class="pill" href="#index">Home</a></div>
+      </div>
+      <div id="pcList">
+        <div class="vhead work-head"><h1>Olha<br>a Rua<span class="sr"> Print Club</span></h1><p class="mono work-sub-l">Print Club</p></div>
+        <div class="g-grid" id="pcGrid"></div>
+        <p class="g-note mono">Olha a Rua, one volume at a time. Sample volumes and placeholder images.</p>
+      </div>
+      <div id="pcSet" hidden></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="view" data-view="about" hidden>
+      <h1 class="sr">About Fabiola Viveros</h1>
+      <div class="ab-top mono"><span>About</span></div>
+      <div class="ab-hero">
+        <figure class="ab-photo" id="abPhoto" aria-label="Portrait of Fabiola Viveros"></figure>
+      </div>
+      <div class="ab-id">
+        <p class="ab-role">Art Historian, photographer and Engineer</p>
+        <div class="ab-loc"><span class="mono">Based in</span><p>Mexico City, M&eacute;xico</p></div>
+      </div>
+      <div class="ab-rule"></div>
+      <div class="ab-about">
+        <span class="mono ab-lab">About</span>
+        <div class="ab-text">
+          <p>Fabiola Garc&iacute;a Viveros is an art historian, photographer and engineer based in Mexico City. She trained in art history at Casa Lamm and at the Instituto de Investigaciones Est&eacute;ticas of UNAM.</p>
+          <p>Her work moves between analog street photography, writing and research. She reads an image by describing the technique, then the image, then what form, idea and content do together.</p>
+        </div>
+      </div>
+      <div class="ab-cardwrap">
+        <div class="ccard">
+          <div class="cc-top mono"><span>Contact card</span><span>FV</span></div>
+          <div class="cc-main">
+            <div class="cc-info">
+              <p class="cc-name">Fabiola Viveros</p>
+              <ul class="cc-list">
+                <li><span class="mono">Email</span><button class="cc-copy" type="button" data-copytext="imgviveros@gmail.com"><span class="cc-val">imgviveros@gmail.com</span><span class="cc-arrow" aria-hidden="true">&#8599;</span></button></li>
+                <li><span class="mono">Website</span><button class="cc-copy" type="button" data-copytext="fabiolaviveros.com"><span class="cc-val">fabiolaviveros.com</span><span class="cc-arrow" aria-hidden="true">&#8599;</span></button></li>
+              </ul>
+            </div>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <p class="cc-foot mono">Tap an address to copy it</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="view" data-view="contact" hidden>
+      <div class="vhead">
+        <h1 class="disp">Contact</h1>
+        <div class="vmeta mono"><span>Prints and commissions</span><span>Museums and institutions</span></div>
+      </div>
+      <div class="addr">
+        <div class="a" id="addr">your@address.com</div>
+        <button class="copy" type="button" data-copy="addr">Copy address</button>
+      </div>
+      <div class="clinks" id="cLinks"></div>
+      <div class="inq">
+        <div><span class="mono">Prints and licensing</span><h2 class="disp">Prints</h2><p>Sets, single prints and licensing of images. Say which frames, the size, and where they will be used.</p></div>
+        <div><span class="mono">Commissions</span><h2 class="disp">Commissions</h2><p>Street and editorial work on film. Include the place, the dates, and who the work is for.</p></div>
+        <div><span class="mono">Museums and institutions</span><h2 class="disp">Institutions</h2><p>Exhibitions, acquisitions, talks and readings of photographs. Include the venue and the schedule.</p></div>
+        <div><span class="mono">Press and the club</span><h2 class="disp">Press, club</h2><p>Interviews, workshops and the analog photography club. Include the outlet or the group.</p></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div><span class="mono">Fabiola Viveros</span><p style="margin-top:0.5rem">&copy; 2026 Fabiola Garc&iacute;a Viveros. All photographs and texts reserved.</p></div>
+    <div><span class="mono">Elsewhere</span><div class="soc-row" id="socFoot"></div></div>
+    <button type="button" class="sub" id="subBtn" aria-pressed="false"><span class="mono">Subscription</span><span class="sub-t">Format to be decided.</span><span class="sub-more" id="subMore" hidden></span></button>
+  </footer>
+</div>
+
+<script type="application/json" id="fv-essays">[{"id": "form-idea-content-on-the-street", "t": "Form, idea, content on the street", "date": "28 Sep 2026", "tag": "Method", "substack": "", "intro": "A three-step method for reading a single photograph.\n\n// Sample essay. Edit or delete it.\n\nSample text. Replace this with the opening of your essay. Short paragraphs sit well in this narrow column.", "blocks": [{"k": "photo", "src": "", "cap": "Caption for the photograph.", "ratio": "21/9", "fit": "full"}, {"k": "section", "h": "Form", "body": "Placeholder text about the first step.\n\nA second paragraph. Use a blank line between paragraphs."}, {"k": "section", "h": "Idea", "body": "Placeholder text about the second step.\n\n---\n\n## Subheading in capitals\n// Small note under a heading\n### A title in sentence case\n\nText that follows the heading."}, {"k": "pair", "src": "", "cap": "Left caption", "src2": "", "cap2": "Right caption", "ratio": "4/5"}, {"k": "section", "h": "Content", "body": "Placeholder text. Replace this with the essay. A blank line starts a new paragraph."}]}, {"id": "rinascita-not-renaissance", "t": "Rinascita, not Renaissance", "date": "14 Sep 2026", "tag": "Art history", "substack": "", "intro": "Why the word you choose changes what you see in a fresco.\n\n// Sample essay.\n\nPlaceholder text. Replace this with the essay. A blank line starts a new paragraph.", "blocks": [{"k": "photo", "src": "", "cap": "Caption.", "ratio": "16/9", "fit": "full"}, {"k": "section", "h": "Why the word matters", "body": "Placeholder text. Replace this with the essay. A blank line starts a new paragraph."}]}, {"id": "venice-the-second-time", "t": "Venice, the second time", "date": "30 Aug 2026", "tag": "Field notes", "substack": "", "intro": "Field notes from a city that is photographed more than it is looked at.\n\n// Sample essay.\n\nPlaceholder text. Replace this with the essay. A blank line starts a new paragraph.", "blocks": [{"k": "section", "h": "First morning", "body": "Placeholder text. Replace this with the essay. A blank line starts a new paragraph."}, {"k": "photo", "src": "", "cap": "Caption.", "ratio": "3/2", "fit": "inset"}]}, {"id": "notes-on-a-ricoh-hour", "t": "Notes on a Ricoh hour", "date": "11 Aug 2026", "tag": "Practice", "substack": "", "intro": "What changes when the light is gone and the camera is still in your hand.\n\n// Sample essay.\n\nPlaceholder text. Replace this with the essay. A blank line starts a new paragraph.", "blocks": [{"k": "section", "h": "After sunset", "body": "Placeholder text. Replace this with the essay. A blank line starts a new paragraph."}]}, {"id": "why-i-keep-shooting-film", "t": "Why I keep shooting film", "date": "21 Jul 2026", "tag": "Practice", "substack": "", "intro": "Thirty-six chances, and what a limit does to attention.\n\n// Sample essay.\n\nPlaceholder text. Replace this with the essay. A blank line starts a new paragraph.", "blocks": [{"k": "section", "h": "Thirty-six frames", "body": "Placeholder text. Replace this with the essay. A blank line starts a new paragraph."}]}]</script>
+<script>
+(function () {
+  var CONTACT_EMAIL = "hola@shalalalah.com";
+  /* An empty url shows the icon dimmed and unclickable. */
+  var SOCIAL = [
+    { id: "instagram", name: "Instagram", handle: "@olhaarua11", url: "https://www.instagram.com/olhaarua11/" },
+    { id: "substack", name: "Substack", handle: "fabiolaviveros.substack.com", url: "https://fabiolaviveros.substack.com/" },
+    { id: "applemusic", name: "Apple Music", handle: "Playlists", url: "https://music.apple.com/profile/imgviveros" },
+    { id: "youtube", name: "YouTube", handle: "@olhaarua11", url: "https://www.youtube.com/@olhaarua11" }
+  ];
+  var SOC_ICONS = {
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3"/>',
+    substack: '<rect x="4" y="3" width="16" height="2.4"/><rect x="4" y="7.6" width="16" height="2.4"/><path d="M4 12.2h16V21l-8-4.6L4 21z"/>',
+    applemusic: '<path d="M9 18V6.5l10-2V16" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/>',
+    youtube: '<rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9l5.2 3-5.2 3z"/>'
+  };
+  var VIEWS = ["index", "gallery", "projects", "essays", "printclub", "about", "contact"];
+
+  /* Replace `src` with a photo path or data URI to swap a placeholder for a scan. */
+  var FRAMES = [
+    { place: "Venezia", date: "5 Aug 2026", cam: "Minolta", stock: "Portra 400", r: "3/2", s: 8, sel: true },
+    { place: "Venezia", date: "5 Aug 2026", cam: "Minolta", stock: "Portra 400", r: "2/3", s: 4 },
+    { place: "Venezia", date: "9 Aug 2026", cam: "Ricoh GR IIIx", stock: "Color Negative recipe", r: "3/2", s: 5 },
+    { place: "Padova", date: "6 Aug 2026", cam: "Minolta", stock: "Ultramax 400", r: "3/2", s: 7 },
+    { place: "Venezia", date: "9 Aug 2026", cam: "Polaroid Now+", stock: "Instant", r: "1/1", s: 4, series: "Polaroid", sel: true },
+    { place: "Firenze", date: "17 Jul 2026", cam: "Minolta", stock: "Portra 160", r: "2/3", s: 4 },
+    { place: "Firenze", date: "19 Jul 2026", cam: "Ricoh GR IIIx", stock: "Color Negative recipe", r: "3/2", s: 4 },
+    { place: "Roma", date: "27 Jul 2026", cam: "Minolta", stock: "Portra 400", r: "3/2", s: 6 },
+    { place: "Padova", date: "7 Aug 2026", cam: "Ricoh GR IIIx", stock: "Color Negative recipe", r: "2/3", s: 3 },
+    { place: "Firenze", date: "22 Jul 2026", cam: "Polaroid Now+", stock: "Instant", r: "1/1", s: 3, series: "Polaroid" },
+    { place: "Roma", date: "28 Jul 2026", cam: "Minolta", stock: "Gold 200", r: "3/2", s: 6, sel: true },
+    { place: "Venezia", date: "9 Aug 2026", cam: "Minolta", stock: "Ultramax 400", r: "3/2", s: 6 }
+  ];
+  FRAMES.forEach(function (f, i) { f.n = i + 1; f.series = f.series || f.place; });
+
+  var PROJECTS = [
+    { id: "phaedrus", t: "Phaedrus", f: [0, 5, 7, 3, 1] },
+    { id: "la-caminata", t: "La caminata", f: [6, 2, 8, 10, 4] },
+    { id: "habitar-lo-moderno", t: "Habitar lo Moderno", f: [7, 3, 9, 11, 6, 0] },
+    { id: "utopia-mexicana", t: "Utopia Mexicana", sub: "Architecture Mexico", f: [3, 7, 10, 2, 9] },
+    { id: "dia-de-muertos", t: "D\u00eda de muertos", f: [1, 4, 8, 5, 11] }
+  ];
+
+  var ESSAYS = JSON.parse(document.getElementById("fv-essays").textContent);
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+  function dims(r) { return r === "2/3" ? [200, 300] : r === "1/1" ? [240, 240] : r === "4/5" ? [240, 300] : [300, 200]; }
+  function num(r) { var p = r.split("/"); return +p[0] / +p[1]; }
+
+  /* Placeholder street scene: wall, doorway, long shadow, one figure, film grain. */
+  function art(seed, r) {
+    var d = dims(r), w = d[0], h = d[1], R = rng(seed * 7919 + 13), g = h * 0.9, hz = h * (0.38 + R() * 0.25);
+    var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
+    s += '<rect width="' + w + '" height="' + h + '" fill="var(--p1)"/>';
+    s += '<rect y="' + hz + '" width="' + w + '" height="' + (h - hz) + '" fill="var(--p2)"/>';
+    var x = -10, tones = ["--p3", "--p2", "--p4"];
+    while (x < w) {
+      var bw = 34 + R() * 80, bh = h * (0.22 + R() * 0.5), top = hz - bh + h * 0.06, tone = tones[Math.floor(R() * 3)];
+      s += '<rect x="' + x.toFixed(1) + '" y="' + top.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + (g - top).toFixed(1) + '" fill="var(' + tone + ')"/>';
+      var cols = Math.max(1, Math.floor(bw / 20));
+      for (var c = 0; c < cols; c++) s += '<rect x="' + (x + 7 + c * 20).toFixed(1) + '" y="' + (top + 14).toFixed(1) + '" width="8" height="15" fill="var(--p1)" opacity=".5"/>';
+      x += bw + (R() < 0.3 ? 5 : 0);
+    }
+    var aw = 36 + R() * 26, ah = h * 0.4, ax = w * (0.12 + R() * 0.6);
+    s += '<path d="M' + ax.toFixed(1) + ' ' + g + ' V' + (g - ah + aw / 2).toFixed(1) + ' a' + (aw / 2).toFixed(1) + ' ' + (aw / 2).toFixed(1) + ' 0 0 1 ' + aw.toFixed(1) + ' 0 V' + g + ' Z" fill="var(--p0)"/>';
+    s += '<polygon points="0,' + g + ' ' + w + ',' + g + ' ' + w + ',' + h + ' 0,' + h + '" fill="var(--p0)" opacity=".55"/>';
+    var sx = w * (0.1 + R() * 0.5);
+    s += '<polygon points="' + sx.toFixed(1) + ',' + g + ' ' + (sx + 60 + R() * 60).toFixed(1) + ',' + g + ' ' + (sx + 130 + R() * 70).toFixed(1) + ',' + h + ' ' + (sx + 40).toFixed(1) + ',' + h + '" fill="var(--p0)" opacity=".5"/>';
+    var fx = w * (0.18 + R() * 0.64), fh = h * (0.24 + R() * 0.08);
+    s += '<circle cx="' + fx.toFixed(1) + '" cy="' + (g - fh).toFixed(1) + '" r="' + (fh * 0.1).toFixed(1) + '" fill="var(--p0)"/>';
+    s += '<rect x="' + (fx - fh * 0.1).toFixed(1) + '" y="' + (g - fh * 0.88).toFixed(1) + '" width="' + (fh * 0.2).toFixed(1) + '" height="' + (fh * 0.88).toFixed(1) + '" rx="' + (fh * 0.08).toFixed(1) + '" fill="var(--p0)"/>';
+    s += '<polygon points="' + (fx - fh * 0.1).toFixed(1) + ',' + g + ' ' + (fx + fh * 0.1).toFixed(1) + ',' + g + ' ' + (fx + fh * 0.9).toFixed(1) + ',' + (g + h * 0.08).toFixed(1) + ' ' + (fx + fh * 0.5).toFixed(1) + ',' + (g + h * 0.08).toFixed(1) + '" fill="var(--p0)" opacity=".5"/>';
+    s += '<rect width="' + w + '" height="' + h + '" fill="var(--p1)" filter="url(#grain)"/></svg>';
+    return s;
+  }
+  function artBox(f, seed, ratio) {
+    var inner = f && f.src ? '<img src="' + f.src + '" alt="">' : art(seed, ratio);
+    return '<div class="art" style="aspect-ratio:' + ratio + '">' + inner + '</div>';
+  }
+  var CIRCLE = '<svg class="circle" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M18 52 C 12 20, 70 6, 128 9 C 186 12, 196 52, 150 76 C 104 98, 20 88, 9 54 C 6 40, 20 26, 44 18"/></svg>';
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function caption(f) {
+    return '<figcaption class="mono"><span class="l1">No. ' + pad(f.n) + ' / ' + f.place + ' / ' + f.date + '</span><span class="l2">' + f.cam + ' / ' + f.stock + '</span></figcaption>';
+  }
+
+  var PORTRAIT_SRC = ""; /* set to your black and white photo */
+  (function () {
+    var inner = PORTRAIT_SRC
+      ? '<img src="' + PORTRAIT_SRC + '" alt="Fabiola Viveros" style="filter:grayscale(1)">'
+      : '<svg viewBox="0 0 180 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="180" height="200" fill="var(--p1)"/><circle cx="92" cy="80" r="32" fill="var(--p3)"/><path d="M14 200C18 150 56 128 92 128S166 150 170 200Z" fill="var(--p0)"/><rect width="180" height="200" fill="var(--p1)" filter="url(#grain)"/></svg><span class="ph">PLACEHOLDER</span>';
+    $("#abPhoto").innerHTML = '<div class="art" style="aspect-ratio:9/10">' + inner + '</div>';
+  })();
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copytext]");
+    if (!b) return;
+    var t = b.getAttribute("data-copytext"), ar = b.querySelector(".cc-arrow"), val = b.querySelector(".cc-val");
+    function done(x) { ar.textContent = x; setTimeout(function () { ar.textContent = "\u2197"; }, 1500); }
+    function sel() { var r = document.createRange(); r.selectNodeContents(val); var g = window.getSelection(); g.removeAllRanges(); g.addRange(r); done("Selected"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { done("Copied"); }, sel); else sel();
+  });
+
+  /* Gallery: themed sets. `f` lists indexes into FRAMES. Add `src` on a frame to use a real photo. */
+  var SETS = [
+    { id: "shadows", t: "Shadows", f: [0, 1, 3, 7, 8, 10], light: false },
+    { id: "reflections", t: "Reflections", f: [2, 4, 6, 9, 11], light: true },
+    { id: "ghosts", t: "Ghosts", f: [5, 1, 9, 0], light: true },
+    { id: "cities-as-characters", t: "Cities as characters", f: [3, 7, 10, 6, 2, 11], light: false },
+    { id: "strangers", t: "Strangers", f: [4, 8, 5, 0, 7], light: false },
+    { id: "thresholds", t: "Thresholds", f: [9, 2, 11, 3], light: true },
+    { id: "night", t: "Night", f: [10, 6, 1, 8, 4], light: true },
+    { id: "polaroids", t: "Polaroids", f: [4, 9], light: false }
+  ];
+  function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
+  function setByIdx(i) { return SETS[(i + SETS.length) % SETS.length]; }
+  $("#gGrid").innerHTML = SETS.map(function (st, i) {
+    var f = FRAMES[st.f[0]];
+    return '<a class="g-item" href="#gallery/' + st.id + '"><span class="g-matte' + (st.light ? ' light' : '') + '">' + artBox(f, f.n * 7 + i, f.r) + '<span class="ph">PLACEHOLDER</span></span><span class="g-title">' + st.t + '</span></a>';
+  }).join("");
+  var curSet = null;
+  function showFrame(k) {
+    var c = curSet, n = c.fr.length;
+    c.k = (k + n) % n;
+    var f = c.fr[c.k];
+    $("#carStage").style.setProperty("--rn", num(f.r));
+    $("#carImg").innerHTML = '<figure class="s-img" style="--rn:' + num(f.r) + '">' + artBox(f, f.n * 11 + c.i * 3 + c.k, f.r) + '<span class="ph">PLACEHOLDER</span></figure>';
+    $("#carCount").textContent = (c.k + 1) + "/" + n;
+    $("#carCap").textContent = f.place + " / " + f.date + " / " + f.cam + " / " + f.stock;
+  }
+  $("#carPrev").addEventListener("click", function () { showFrame(curSet.k - 1); });
+  $("#carNext").addEventListener("click", function () { showFrame(curSet.k + 1); });
+  document.addEventListener("keydown", function (e) {
+    if ($("#gSet").hidden || $('[data-view="gallery"]').hidden || /input|textarea/i.test((e.target.tagName || ""))) return;
+    if (e.key === "ArrowLeft") showFrame(curSet.k - 1); else if (e.key === "ArrowRight") showFrame(curSet.k + 1);
+  });
+  (function () {
+    var x0 = null, st = $("#carStage");
+    st.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    st.addEventListener("touchend", function (e) { if (x0 === null) return; var d = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(d) > 40) showFrame(curSet.k + (d < 0 ? 1 : -1)); });
+  })();
+  function renderSet(id) {
+    var i = -1;
+    SETS.forEach(function (st, k) { if (st.id === id) i = k; });
+    var showSet = i >= 0, gi = $("#gIndex"), gs = $("#gSet");
+    gi.hidden = showSet; gs.hidden = !showSet;
+    if (showSet) { $("#pIndex").removeAttribute("aria-current"); } else { $("#pIndex").setAttribute("aria-current", "page"); }
+    $("#gMid").textContent = showSet ? SETS[i].t : "Gallery";
+    if (!showSet) return;
+    var st = SETS[i], fr = st.f.map(function (k) { return FRAMES[k]; });
+    $("#sTitle").textContent = st.t;
+    $("#sSub").textContent = pad(i + 1) + " / " + pad(SETS.length) + "  \u2014  " + fr.length + " frames";
+    curSet = { i: i, fr: fr, k: 0 }; showFrame(0);
+    var rows = [["Set", st.t], ["Frames", String(fr.length)], ["Year", "2026"], ["Places", uniq(fr.map(function (f) { return f.place; })).join(", ")], ["Cameras", uniq(fr.map(function (f) { return f.cam; })).join(", ")], ["Film", uniq(fr.map(function (f) { return f.stock; })).join(", ")], ["Text", "[add a short note about this set]"]];
+    $("#sInfo").innerHTML = rows.map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>'; }).join("");
+    var pv = setByIdx(i - 1), nx = setByIdx(i + 1);
+    $("#sFoot").innerHTML = '<a class="pill" href="#gallery/' + pv.id + '">&larr; ' + pv.t + '</a><a class="pill" href="#gallery">Index</a><a class="pill" href="#gallery/' + nx.id + '">' + nx.t + ' &rarr;</a>';
+  }
+
+  /* Projects */
+  function workHTML(p, i) {
+    var f = FRAMES[p.f[0]];
+    return '<a class="work-row" href="#projects/' + p.id + '"><div class="work-main"><h2 class="work-t">' + p.t + '</h2><p class="work-date">' + (p.sub ? '<span class="work-sub">' + p.sub + '</span><br>' : '') + 'Oct. 31<br>2026</p></div><div class="work-thumb">' + artBox(f, f.n * 3 + i, "4/5") + '</div></a>';
+  }
+  $("#projList").innerHTML = PROJECTS.map(workHTML).join("");
+  /* Project pages: same carousel and info block as the gallery. */
+  var pjCur = null;
+  function showPj(k) {
+    var c = pjCur, n = c.fr.length, f;
+    c.k = (k + n) % n; f = c.fr[c.k];
+    $("#pjStage").style.setProperty("--rn", num(f.r));
+    $("#pjImg").innerHTML = '<figure class="s-img" style="--rn:' + num(f.r) + '">' + artBox(f, f.n * 17 + c.i * 3 + c.k, f.r) + '<span class="ph">PLACEHOLDER</span></figure>';
+    $("#pjCount").textContent = (c.k + 1) + "/" + n;
+    $("#pjCap").textContent = "[add caption]";
+  }
+  function renderProj(id) {
+    var i = -1;
+    PROJECTS.forEach(function (q, k) { if (q.id === id) i = k; });
+    var on = i >= 0;
+    $("#pjList").hidden = on; $("#pjSet").hidden = !on;
+    if (on) $("#pjIndex").removeAttribute("aria-current"); else $("#pjIndex").setAttribute("aria-current", "page");
+    $("#pjMid").textContent = on ? PROJECTS[i].t : "Projects";
+    if (!on) return;
+    var q = PROJECTS[i], fr = q.f.map(function (k) { return FRAMES[k]; });
+    var rows = [["Project", q.t + (q.sub ? " / " + q.sub : "")], ["Date", "Oct. 31, 2026"], ["Frames", String(fr.length)], ["Category", q.sub || "[add]"], ["Location", "[add]"], ["Commissioned by", "[add]"], ["Text", "[add a short note about this project]"]];
+    var pv = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length], nx = PROJECTS[(i + 1) % PROJECTS.length];
+    $("#pjSet").innerHTML = '<div class="s-head"><h1>' + q.t + '</h1><p class="mono">' + (q.sub ? q.sub + ' / ' : '') + 'Oct. 31 / 2026</p></div>' +
+      '<div class="car" role="group" aria-roledescription="carousel" aria-label="Frames in this project"><div class="car-stage" id="pjStage"><button type="button" class="car-arrow prev" data-pj="-1" aria-label="Previous frame">&larr;</button><div id="pjImg" style="display:contents"></div><button type="button" class="car-arrow next" data-pj="1" aria-label="Next frame">&rarr;</button></div>' +
+      '<div class="car-bar mono"><span class="car-count" id="pjCount" aria-live="polite"></span><span id="pjCap"></span></div></div>' +
+      '<dl class="s-info mono">' + rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + '</dl>' +
+      '<div class="g-foot"><a class="pill" href="#projects/' + pv.id + '">&larr; ' + pv.t + '</a><a class="pill" href="#projects">Index</a><a class="pill" href="#projects/' + nx.id + '">' + nx.t + ' &rarr;</a></div>';
+    pjCur = { i: i, fr: fr, k: 0 }; showPj(0);
+  }
+  $("#pjSet").addEventListener("click", function (e) { var b = e.target.closest("[data-pj]"); if (b && pjCur) showPj(pjCur.k + +b.getAttribute("data-pj")); });
+  document.addEventListener("keydown", function (e) {
+    if ($("#pjSet").hidden || $('[data-view="projects"]').hidden || !pjCur) return;
+    if (e.key === "ArrowLeft") showPj(pjCur.k - 1); else if (e.key === "ArrowRight") showPj(pjCur.k + 1);
+  });
+  (function () {
+    var x0 = null, box = $("#pjSet");
+    box.addEventListener("touchstart", function (e) { if (e.target.closest(".car-stage")) x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) { if (x0 === null || !pjCur) return; var d = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(d) > 40) showPj(pjCur.k + (d < 0 ? 1 : -1)); });
+  })();
+
+  /* Print Club: one entry per monthly volume. `f` lists indexes into FRAMES. */
+  var VOLS = [
+    { id: "vol-2-venezia", t: "Vol. 2 / Venezia", month: "Aug 2026", status: "In progress", f: [0, 1, 2, 4, 11], light: false },
+    { id: "vol-1", t: "Vol. 1", month: "[add]", status: "Published", f: [5, 6, 7, 8, 3, 10], light: true }
+  ];
+  $("#pcGrid").innerHTML = VOLS.map(function (v, i) {
+    var f = FRAMES[v.f[0]];
+    return '<a class="g-item" href="#printclub/' + v.id + '"><span class="g-matte' + (v.light ? ' light' : '') + '">' + artBox(f, f.n * 5 + i, f.r) + '<span class="ph">PLACEHOLDER</span></span><span class="g-title">' + v.t + '</span></a>';
+  }).join("");
+  var pcCur = null;
+  function showPc(k) {
+    var c = pcCur, n = c.fr.length, f;
+    c.k = (k + n) % n; f = c.fr[c.k];
+    $("#pcStage").style.setProperty("--rn", num(f.r));
+    $("#pcImg").innerHTML = '<figure class="s-img" style="--rn:' + num(f.r) + '">' + artBox(f, f.n * 13 + c.i * 3 + c.k, f.r) + '<span class="ph">PLACEHOLDER</span></figure>';
+    $("#pcCount").textContent = (c.k + 1) + "/" + n;
+    $("#pcCap").textContent = f.place + " / " + f.date + " / " + f.cam + " / " + f.stock;
+  }
+  function renderVol(id) {
+    var i = -1;
+    VOLS.forEach(function (v, k) { if (v.id === id) i = k; });
+    var on = i >= 0;
+    $("#pcList").hidden = on; $("#pcSet").hidden = !on;
+    if (on) $("#pcIndex").removeAttribute("aria-current"); else $("#pcIndex").setAttribute("aria-current", "page");
+    $("#pcMid").textContent = on ? VOLS[i].t : "Print Club";
+    if (!on) return;
+    var v = VOLS[i], fr = v.f.map(function (k) { return FRAMES[k]; });
+    var rows = [["Volume", v.t], ["Frames", String(fr.length)], ["Month", v.month], ["Status", v.status], ["Places", uniq(fr.map(function (f) { return f.place; })).join(", ")], ["Cameras", uniq(fr.map(function (f) { return f.cam; })).join(", ")], ["Film", uniq(fr.map(function (f) { return f.stock; })).join(", ")], ["Text", "[add a short note about this volume]"]];
+    var pv = VOLS[(i - 1 + VOLS.length) % VOLS.length], nx = VOLS[(i + 1) % VOLS.length];
+    $("#pcSet").innerHTML = '<div class="s-head"><h1>' + v.t + '</h1><p class="mono">Olha a Rua / ' + v.month + ' / ' + v.status + '</p></div>' +
+      '<div class="car" role="group" aria-roledescription="carousel" aria-label="Frames in this volume"><div class="car-stage" id="pcStage"><button type="button" class="car-arrow prev" data-pc="-1" aria-label="Previous frame">&larr;</button><div id="pcImg" style="display:contents"></div><button type="button" class="car-arrow next" data-pc="1" aria-label="Next frame">&rarr;</button></div>' +
+      '<div class="car-bar mono"><span class="car-count" id="pcCount" aria-live="polite"></span><span id="pcCap"></span></div></div>' +
+      '<dl class="s-info mono">' + rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + '</dl>' +
+      '<div class="g-foot"><a class="pill" href="#printclub/' + pv.id + '">&larr; ' + pv.t + '</a><a class="pill mid" href="#contact">Ask about prints</a><a class="pill" href="#printclub/' + nx.id + '">' + nx.t + ' &rarr;</a></div>';
+    pcCur = { i: i, fr: fr, k: 0 }; showPc(0);
+  }
+  $("#pcSet").addEventListener("click", function (e) { var b = e.target.closest("[data-pc]"); if (b && pcCur) showPc(pcCur.k + +b.getAttribute("data-pc")); });
+  document.addEventListener("keydown", function (e) {
+    if ($("#pcSet").hidden || $('[data-view="printclub"]').hidden || !pcCur) return;
+    if (e.key === "ArrowLeft") showPc(pcCur.k - 1); else if (e.key === "ArrowRight") showPc(pcCur.k + 1);
+  });
+  (function () {
+    var x0 = null, box = $("#pcSet");
+    box.addEventListener("touchstart", function (e) { if (e.target.closest(".car-stage")) x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) { if (x0 === null || !pcCur) return; var d = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(d) > 40) showPc(pcCur.k + (d < 0 ? 1 : -1)); });
+  })();
+
+  /* Essays: written and laid out in the page. Data lives in the fv-essays JSON block. */
+  function esc(x) { return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : ""; }
+  /* Tiny layout markup: blank line = paragraph, "## " big caps heading, "### " title,
+     "// " small note, "---" rule, [text](https://link) link. */
+  function rich(src) {
+    var out = [];
+    String(src || "").replace(/\r/g, "").split(/\n{2,}/).forEach(function (p) {
+      p = p.trim();
+      if (!p) return;
+      if (p === "---") { out.push("<hr>"); return; }
+      var lines = p.split("\n").map(function (l) {
+        var t;
+        if (l.indexOf("## ") === 0) { t = '<span class="r-h">' + esc(l.slice(3)) + "</span>"; }
+        else if (l.indexOf("### ") === 0) { t = '<span class="r-t">' + esc(l.slice(4)) + "</span>"; }
+        else if (l.indexOf("// ") === 0) { t = '<span class="r-m">' + esc(l.slice(3)) + "</span>"; }
+        else { t = esc(l); }
+        return t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      });
+      out.push("<p>" + lines.join("<br>") + "</p>");
+    });
+    return out.join("");
+  }
+  function readMin(e) {
+    var w = (e.intro || "").split(/\s+/).length;
+    (e.blocks || []).forEach(function (b) { w += ((b.body || "") + " " + (b.h || "")).split(/\s+/).length; });
+    return Math.max(1, Math.round(w / 200));
+  }
+  function dek(e) { var l = String(e.intro || "").split("\n")[0]; return l.indexOf("// ") === 0 ? "" : l; }
+  function essayHTML(e) {
+    return '<a class="essay" href="#essays/' + esc(e.id) + '"><span class="e-date mono">' + esc(e.date) + '</span><span class="e-body"><span class="e-title">' + esc(e.t) + '</span><span class="e-dek">' + esc(dek(e)) + '</span></span><span class="e-tag mono">' + esc(e.tag) + ' / ' + readMin(e) + ' min</span><span class="e-go" aria-hidden="true">&rarr;</span></a>';
+  }
+  function phBox(src, seed, ratio) {
+    if (src && ratio === "original") return '<div class="art"><img class="nat" src="' + src + '" alt=""></div>';
+    var r = ratio === "original" ? "3/2" : ratio;
+    return artBox({ src: src }, seed, r) + (src ? "" : '<span class="ph">PLACEHOLDER</span>');
+  }
+  function figHTML(src, cap, ratio, fit, seed) {
+    return '<figure class="eb-ph' + (fit === "inset" ? " inset" : "") + '">' + phBox(src, seed, ratio) + (cap ? "<figcaption>" + esc(cap) + "</figcaption>" : "") + "</figure>";
+  }
+  function blockHTML(b, ei, bi) {
+    var seed = 40 + ei * 7 + bi;
+    if (b.k === "photo") return figHTML(b.src, b.cap, b.ratio || "21/9", b.fit, seed);
+    if (b.k === "pair") return '<div class="eb-pair">' + figHTML(b.src, b.cap, b.ratio || "4/5", "full", seed) + figHTML(b.src2, b.cap2, b.ratio || "4/5", "full", seed + 1) + "</div>";
+    return '<section class="eb two"><h2 class="eb-h2">' + esc(b.h) + '</h2><div class="eb-r">' + rich(b.body) + "</div></section>";
+  }
+  function pageHTML(e, ei) {
+    var h = '<article><header class="eb two"><h1 class="eb-h">' + esc(e.t) + '</h1><div class="eb-r"><p class="eb-meta mono">' + esc(e.date) + " / " + esc(e.tag) + " / " + readMin(e) + " min</p>" + rich(e.intro) + "</div></header>";
+    (e.blocks || []).forEach(function (b, bi) { h += blockHTML(b, ei, bi); });
+    var su = safeUrl(e.substack);
+    h += '<div class="eb eb-end">' + (su ? '<a class="p-link" href="' + esc(su) + '" target="_blank" rel="noopener noreferrer">Also on Substack &nearr;</a>' : "") + "</div></article>";
+    var pv = ESSAYS[(ei - 1 + ESSAYS.length) % ESSAYS.length], nx = ESSAYS[(ei + 1) % ESSAYS.length];
+    h += '<div class="g-foot"><a class="pill" href="#essays/' + esc(pv.id) + '">&larr; ' + esc(pv.t) + '</a><a class="pill" href="#essays">Index</a><a class="pill" href="#essays/' + esc(nx.id) + '">' + esc(nx.t) + ' &rarr;</a></div>';
+    return h;
+  }
+
+  /* Editor: shown only to the person who can edit this page */
+  var canEdit = !!window.__fvEdit, editing = false, curEssay = null, statusMsg = "";
+  var eEdit = $("#eEdit");
+  function enableEditor() { canEdit = true; eEdit.hidden = false; }
+  if (canEdit) eEdit.hidden = false;
+  if (window.claude && window.claude.use) {
+    window.claude.use("user").then(function (u) { if (u && (u.isOwner() || u.canEdit())) enableEditor(); }, function () {});
+  }
+  eEdit.addEventListener("click", function () { editing = !editing; renderEssays(curEssay); });
+  function payload() { return JSON.stringify(ESSAYS); }
+  function sizeLabel() { var kb = payload().length / 1024; return kb > 1024 ? (kb / 1024).toFixed(1) + " MB" : Math.round(kb) + " KB"; }
+  function setStatus(m) { statusMsg = m; var n = $("#edSt"); if (n) n.textContent = m; }
+  function toolsHTML(extra) {
+    return '<div class="ed-tools mono"><button type="button" class="pill mid" data-ed="save">Save &amp; publish</button><button type="button" class="pill" data-ed="copy">Copy layout</button>' + (extra || "") + '<span class="st" id="edSt">' + esc(statusMsg || ("Editing. Page size " + sizeLabel() + " of 16 MB.")) + "</span></div>";
+  }
+  function field(label, f, val, type) { return '<label class="mono">' + label + '<input type="' + (type || "text") + '" data-f="' + f + '" value="' + esc(val) + '"></label>'; }
+  function upField(label, bi, slot, src) {
+    return '<div><span class="mono ed-hint">' + label + '</span><div class="ed-thumb">' + phBox(src, 90 + bi, "3/2") + '</div><div style="margin-top:.5rem;display:flex;gap:.35rem;flex-wrap:wrap"><label class="pill" style="cursor:pointer">Choose photo<input type="file" accept="image/*" data-up="' + bi + '" data-slot="' + slot + '" hidden></label>' + (src ? '<button type="button" class="pill" data-clr="' + bi + '" data-slot="' + slot + '">Remove</button>' : "") + "</div></div>";
+  }
+  var RATIOS = [["21/9", "Wide 21:9"], ["16/9", "Wide 16:9"], ["3/2", "Landscape 3:2"], ["4/5", "Portrait 4:5"], ["original", "Original shape"]];
+  function ratioSel(b, def) {
+    return '<label class="mono">Shape<select data-f="ratio">' + RATIOS.map(function (r) { return '<option value="' + r[0] + '"' + ((b.ratio || def) === r[0] ? " selected" : "") + ">" + r[1] + "</option>"; }).join("") + "</select></label>";
+  }
+  function blockForm(b, bi, n) {
+    var kind = b.k === "photo" ? "Photo" : b.k === "pair" ? "Two photos" : "Text section";
+    var h = '<div class="ed-card" data-b="' + bi + '"><div class="hd"><span class="mono">' + (bi + 1) + " / " + n + " &middot; " + kind + '</span><span class="grp"><button type="button" class="pill" data-mv="-1">&uarr;</button><button type="button" class="pill" data-mv="1">&darr;</button><button type="button" class="pill" data-del="1">Delete</button></span></div>';
+    if (b.k === "photo") {
+      h += upField("Photo", bi, "src", b.src) + '<div class="ed-row">' + ratioSel(b, "21/9") + '<label class="mono">Width<select data-f="fit"><option value="full"' + (b.fit !== "inset" ? " selected" : "") + '>Edge to edge</option><option value="inset"' + (b.fit === "inset" ? " selected" : "") + '>With margins</option></select></label></div>' + field("Caption", "cap", b.cap);
+    } else if (b.k === "pair") {
+      h += '<div class="ed-row">' + upField("Left photo", bi, "src", b.src) + upField("Right photo", bi, "src2", b.src2) + "</div>" + ratioSel(b, "4/5") + '<div class="ed-row">' + field("Left caption", "cap", b.cap) + field("Right caption", "cap2", b.cap2) + "</div>";
+    } else {
+      h += field("Heading (left column, shown in capitals)", "h", b.h) + '<label class="mono">Text (right column)<textarea data-f="body">' + esc(b.body) + '</textarea></label><p class="ed-hint mono">Blank line = new paragraph. ## big heading. ### title. // small note. --- rule. [text](https://link) link.</p>';
+    }
+    return h + "</div>";
+  }
+  function editPage(e) {
+    var h = toolsHTML('<button type="button" class="pill" data-ed="done">Done</button>');
+    h += '<div class="ed-card" data-e="1"><span class="mono">Essay</span>' + field("Title", "t", e.t) + '<div class="ed-row">' + field("Date", "date", e.date) + field("Tag", "tag", e.tag) + "</div>" + field("Substack link (optional, https://...)", "substack", e.substack, "url") +
+      '<label class="mono">Opening text (shown next to the title)<textarea data-f="intro">' + esc(e.intro) + '</textarea></label><p class="ed-hint mono">First line also appears on the index. Blank line = new paragraph. // small note. [text](https://link) link.</p><div><button type="button" class="pill" data-ed="delessay">Delete this essay</button></div></div>';
+    (e.blocks || []).forEach(function (b, bi) { h += blockForm(b, bi, e.blocks.length); });
+    h += '<div class="ed-add"><button type="button" class="pill mid" data-add="section">+ Text section</button><button type="button" class="pill mid" data-add="photo">+ Photo</button><button type="button" class="pill mid" data-add="pair">+ Two photos</button></div>';
+    return h;
+  }
+  function slugify(t) { return String(t || "essay").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "essay"; }
+  function newId(t) { var b = slugify(t), id = b, n = 2; while (ESSAYS.some(function (e) { return e.id === id; })) id = b + "-" + n++; return id; }
+  function loadImg(file, cb) {
+    var r = new FileReader();
+    r.onload = function () {
+      var im = new Image();
+      im.onload = function () {
+        var s = Math.min(1, 1800 / Math.max(im.width, im.height)), c = document.createElement("canvas");
+        c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+        c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+        cb(c.toDataURL("image/jpeg", 0.82));
+      };
+      im.onerror = function () { cb(null); };
+      im.src = r.result;
+    };
+    r.onerror = function () { cb(null); };
+    r.readAsDataURL(file);
+  }
+  function copyLayout() {
+    var t = payload();
+    function sel() {
+      var ta = document.createElement("textarea"); ta.value = t; ta.style.cssText = "position:fixed;left:0;top:0;width:1px;height:1px;opacity:0";
+      document.body.appendChild(ta); ta.select(); var ok = false; try { ok = document.execCommand("copy"); } catch (x) {} document.body.removeChild(ta);
+      setStatus(ok ? "Layout copied (" + sizeLabel() + ")." : "Could not copy. Use Save & publish instead.");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { setStatus("Layout copied (" + sizeLabel() + ")."); }, sel); else sel();
+  }
+  function save() {
+    setStatus("Saving...");
+    var c = window.claude && window.claude.use ? window.claude.use("artifact") : Promise.resolve(null);
+    c.then(function (art) {
+      if (!art) throw new Error("no artifact capability");
+      return fetch(location.href.split("#")[0], { cache: "no-store" }).then(function (r) { return r.text(); }).then(function (src) {
+        var re = /(<script type="application\/json" id="fv-essays">)[\s\S]*?(<\/script>)/;
+        if (!re.test(src)) throw new Error("source not found");
+        var json = payload().replace(/</g, "\\u003c");
+        return art.publish(src.replace(re, function (m, a, b) { return a + json + b; }));
+      });
+    }).then(function () { setStatus("Published."); }, function (err) {
+      setStatus("Could not publish from here (" + (err && err.message ? err.message : "error") + "). Use Copy layout and send it to Claude.");
+    });
+  }
+  function bindEditor() {
+    var root = $("[data-view='essays']");
+    if (root._bound) return; root._bound = true;
+    root.addEventListener("input", function (ev) {
+      var t = ev.target, f = t.getAttribute && t.getAttribute("data-f"); if (!f) return;
+      var card = t.closest(".ed-card"), e = ESSAYS[curIdx()]; if (!card || !e) return;
+      if (card.hasAttribute("data-e")) e[f] = t.value; else e.blocks[+card.getAttribute("data-b")][f] = t.value;
+      if (t.tagName === "SELECT") renderEssays(curEssay, true);
+    });
+    root.addEventListener("change", function (ev) {
+      var t = ev.target;
+      if (t.hasAttribute && t.hasAttribute("data-up") && t.files && t.files[0]) {
+        var bi = +t.getAttribute("data-up"), slot = t.getAttribute("data-slot");
+        setStatus("Preparing photo...");
+        loadImg(t.files[0], function (d) {
+          if (!d) { setStatus("That file could not be read as an image."); return; }
+          ESSAYS[curIdx()].blocks[bi][slot] = d; setStatus(""); renderEssays(curEssay, true);
+        });
+      }
+    });
+    root.addEventListener("click", function (ev) {
+      var t = ev.target.closest("button"); if (!t) return;
+      var e = ESSAYS[curIdx()], card = t.closest(".ed-card"), bi = card && card.hasAttribute("data-b") ? +card.getAttribute("data-b") : -1;
+      var ed = t.getAttribute("data-ed");
+      if (ed === "save") save(); else if (ed === "copy") copyLayout(); else if (ed === "done") { editing = false; renderEssays(curEssay); }
+      else if (ed === "delessay" && e) { if (ESSAYS.length > 1 || true) { ESSAYS.splice(curIdx(), 1); editing = false; location.hash = "#essays"; } }
+      else if (ed === "new") {
+        var n = { id: newId("new essay"), t: "New essay", date: "", tag: "", substack: "", intro: "Opening text.", blocks: [{ k: "section", h: "Heading", body: "Text." }] };
+        ESSAYS.unshift(n); editing = true; location.hash = "#essays/" + n.id;
+      }
+      else if (t.hasAttribute("data-mv") && e && bi >= 0) { var j = bi + +t.getAttribute("data-mv"); if (j >= 0 && j < e.blocks.length) { var x = e.blocks[bi]; e.blocks[bi] = e.blocks[j]; e.blocks[j] = x; renderEssays(curEssay, true); } }
+      else if (t.hasAttribute("data-del") && e && bi >= 0) { e.blocks.splice(bi, 1); renderEssays(curEssay, true); }
+      else if (t.hasAttribute("data-clr") && e) { e.blocks[+t.getAttribute("data-clr")][t.getAttribute("data-slot")] = ""; renderEssays(curEssay, true); }
+      else if (t.hasAttribute("data-add") && e) {
+        var k = t.getAttribute("data-add");
+        e.blocks.push(k === "photo" ? { k: "photo", src: "", cap: "", ratio: "21/9", fit: "full" } : k === "pair" ? { k: "pair", src: "", cap: "", src2: "", cap2: "", ratio: "4/5" } : { k: "section", h: "Heading", body: "Text." });
+        renderEssays(curEssay, true);
+        var cs = root.querySelectorAll(".ed-card[data-b]"); if (cs.length) cs[cs.length - 1].scrollIntoView({ block: "center" });
+      }
+    });
+  }
+  function curIdx() { var r = -1; ESSAYS.forEach(function (e, i) { if (e.id === curEssay) r = i; }); return r; }
+
+  function renderEssays(id, keepScroll) {
+    curEssay = id || null;
+    var i = curIdx(), isPage = i >= 0;
+    $("#eList").hidden = isPage; $("#ePage").hidden = !isPage;
+    if (isPage) $("#pEIndex").removeAttribute("aria-current"); else $("#pEIndex").setAttribute("aria-current", "page");
+    $("#eMid").textContent = isPage ? ESSAYS[i].t : "Essays";
+    eEdit.textContent = editing ? "Done" : "Edit"; eEdit.classList.toggle("on", editing);
+    var y = window.pageYOffset;
+    if (isPage) {
+      $("#ePage").innerHTML = editing && canEdit ? editPage(ESSAYS[i]) : pageHTML(ESSAYS[i], i);
+    } else {
+      $("#essayFeat").innerHTML = ESSAYS.length ? essayHTML(ESSAYS[0]) : '<p class="empty-note mono">No essays yet.</p>';
+      $("#essayList").innerHTML = ESSAYS.map(essayHTML).join("");
+      $("#eCount").textContent = ESSAYS.length + " essays";
+      $("#eCount2").textContent = ESSAYS.length + " essays";
+      $("#eTools1").innerHTML = editing && canEdit ? toolsHTML('<button type="button" class="pill mid" data-ed="new">+ New essay</button>') : "";
+    }
+    if (canEdit) bindEditor();
+    if (keepScroll) window.scrollTo(0, y);
+  }
+  $("#accBtn").addEventListener("click", function () {
+    var open = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", String(!open));
+    $("#essayList").hidden = open;
+    $("#accI").textContent = open ? "+" : "−";
+  });
+
+  /* Home index: numbered sections that open in place */
+  var ICONS = {
+    projects: '<circle cx="12" cy="9" r="6.5"/><rect x="2" y="19" width="20" height="2.5"/>',
+    gallery: '<rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9" rx="4.5"/>',
+    essays: '<rect x="2" y="4" width="20" height="3"/><rect x="2" y="10.5" width="14" height="3"/><rect x="2" y="17" width="9" height="3"/>',
+    printclub: '<circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="11" y="1" width="2" height="22"/><rect x="1" y="11" width="22" height="2"/><circle cx="12" cy="12" r="2.6"/>',
+    about: '<path d="M2 12A10 10 0 0 1 12 2v10z"/><rect x="13" y="13" width="9" height="9"/>',
+    contact: '<rect x="2" y="2" width="20" height="3"/><circle cx="12" cy="15" r="7"/>'
+  };
+  var SECTIONS = [
+    { id: "projects", label: "Projects" },
+    { id: "gallery", label: "Gallery" },
+    { id: "essays", label: "Essays" },
+    { id: "printclub", label: "Print Club" },
+    { id: "about", label: "About" },
+    { id: "contact", label: "Contact" }
+  ];
+  function icon(k) { return '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">' + ICONS[k] + '</svg>'; }
+  $("#acc").innerHTML = SECTIONS.map(function (s, i) {
+    return '<a class="acc-row" href="#' + s.id + '"><span class="num">' + pad(i + 1) + '/</span><span class="lab-r">' + s.label + '</span>' + icon(s.id) + '</a>';
+  }).join("");
+
+  /* Moving "Prints available" bar */
+  (function () {
+    var unit = '<span>PRINTS AVAILABLE</span><span>&#9656;</span><span>PRINT CLUB</span><span>&#9656;</span>', one = "", i;
+    for (i = 0; i < 8; i++) one += unit;
+    $("#ticker .track").innerHTML = one + one;
+  })();
+
+  /* Router and mobile menu */
+  var links = $("#links"), menuBtn = $("#menu");
+  function closeMenu() { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); menuBtn.textContent = "Menu"; }
+  menuBtn.addEventListener("click", function () {
+    var o = links.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(o));
+    menuBtn.textContent = o ? "Close" : "Menu";
+  });
+  function route() {
+    var parts = location.hash.replace("#", "").split("/"), h = parts[0];
+    var v = VIEWS.indexOf(h) >= 0 ? h : "index";
+    $("#ticker").hidden = v !== "index";
+    if (v === "gallery") renderSet(parts[1]);
+    if (v === "essays") renderEssays(parts[1]);
+    if (v === "printclub") renderVol(parts[1]);
+    if (v === "projects") renderProj(parts[1]);
+    Array.prototype.forEach.call(document.querySelectorAll(".view"), function (s) { s.hidden = s.getAttribute("data-view") !== v; });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-nav]"), function (a) {
+      if (a.getAttribute("data-nav") === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    closeMenu();
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+
+  /* Theme */
+  var root = document.documentElement, tb = $("#theme");
+  function isDark() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t === "dark";
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function label() { tb.textContent = isDark() ? "Light" : "Dark"; }
+  try { var saved = localStorage.getItem("fv-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  tb.addEventListener("click", function () {
+    var next = isDark() ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fv-theme", next); } catch (e) {}
+    label();
+  });
+
+  /* Contact */
+  $("#subBtn").addEventListener("click", function () {
+    var on = this.getAttribute("aria-pressed") !== "true";
+    this.setAttribute("aria-pressed", String(on));
+    var m = $("#subMore"); m.hidden = !on;
+    m.textContent = "Not open yet. Write to " + CONTACT_EMAIL + " to be told when it opens.";
+  });
+  $("#addr").innerHTML = '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>';
+  function socIcon(k) { return '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' + SOC_ICONS[k] + '</svg>'; }
+  $("#socFoot").innerHTML = SOCIAL.map(function (x) {
+    return x.url ? '<a class="soc" href="' + x.url + '" target="_blank" rel="noopener noreferrer" aria-label="' + x.name + '" title="' + x.name + '">' + socIcon(x.id) + '</a>'
+      : '<span class="soc off" role="img" aria-label="' + x.name + ', link to be added" title="' + x.name + ' (link to be added)">' + socIcon(x.id) + '</span>';
+  }).join("");
+  $("#cLinks").innerHTML = SOCIAL.filter(function (x) { return x.url && (x.id === "instagram" || x.id === "substack"); }).map(function (x) {
+    return '<a class="crow" href="' + x.url + '" target="_blank" rel="noopener noreferrer"><span class="mono">' + x.name + '</span><span class="cv">' + x.handle + '</span><span aria-hidden="true">&#8599;</span></a>';
+  }).join("");
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy]");
+    if (!b) return;
+    var el = document.getElementById(b.getAttribute("data-copy")), orig = "Copy address";
+    function done(t) { b.textContent = t; setTimeout(function () { b.textContent = orig; }, 1600); }
+    function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done("Selected, press copy"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(CONTACT_EMAIL).then(function () { done("Copied"); }, sel); else sel();
+  });
+
+  label(); route();
+})();
+</script>
