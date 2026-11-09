@@ -567,7 +567,11 @@ a.soc:hover, a.soc:focus-visible { background: var(--a2); border-color: var(--a2
   FRAMES.forEach(function (f, i) { f.n = i + 1; f.series = f.series || f.place; });
 
   var PROJECTS = [
-    { id: "phaedrus", t: "Phaedrus", f: [0, 5, 7, 3, 1] },
+    { id: "phaedrus", t: "Phaedrus", f: [0, 5, 7, 3, 1],
+      date: "2025\u20132027", cat: "Artist\u2019s book", by: "Self-initiated",
+      text: ["Phaedrus is a Midori MD notebook filled with 52 texts and 52 photographs, with tracing-paper overlays, where text and image work together as objects in the line of Duane Michals. The notebook is the artwork, not a draft of it.",
+             "Its structure comes from alchemy: nigredo, albedo and rubedo, three stages of breaking something down, clarifying it and returning it changed. Its thinking comes from Plato\u2019s idea that to learn is to remember, and from Proust, Benjamin, Barthes and Warburg on how images and memory work.",
+             "The subject is love, memory and the recovery of oneself afterwards. Begun in May 2025, the book is forthcoming in 2027."] },
     { id: "la-caminata", t: "La caminata", f: [6, 2, 8, 10, 4] },
     { id: "habitar-lo-moderno", t: "Habitar lo Moderno", f: [7, 3, 9, 11, 6, 0] },
     { id: "utopia-mexicana", t: "Utopia Mexicana", sub: "Architecture Mexico", f: [3, 7, 10, 2, 9] },
@@ -695,7 +699,7 @@ a.soc:hover, a.soc:focus-visible { background: var(--a2); border-color: var(--a2
   /* Projects */
   function workHTML(p, i) {
     var f = FRAMES[p.f[0]];
-    return '<a class="work-row" href="#projects/' + p.id + '"><div class="work-main"><h2 class="work-t">' + p.t + '</h2><p class="work-date">' + (p.sub ? '<span class="work-sub">' + p.sub + '</span><br>' : '') + 'Oct. 31<br>2026</p></div><div class="work-thumb">' + artBox(f, f.n * 3 + i, "4/5") + '</div></a>';
+    return '<a class="work-row" href="#projects/' + p.id + '"><div class="work-main"><h2 class="work-t">' + p.t + '</h2><p class="work-date">' + (p.sub ? '<span class="work-sub">' + p.sub + '</span><br>' : '') + (p.date || 'Oct. 31<br>2026') + '</p></div><div class="work-thumb">' + artBox(f, f.n * 3 + i, "4/5") + '</div></a>';
   }
   $("#projList").innerHTML = PROJECTS.map(workHTML).join("");
   /* Project pages: same carousel and info block as the gallery. */
@@ -717,9 +721,9 @@ a.soc:hover, a.soc:focus-visible { background: var(--a2); border-color: var(--a2
     $("#pjMid").textContent = on ? PROJECTS[i].t : "Projects";
     if (!on) return;
     var q = PROJECTS[i], fr = q.f.map(function (k) { return FRAMES[k]; });
-    var rows = [["Project", q.t + (q.sub ? " / " + q.sub : "")], ["Date", "Oct. 31, 2026"], ["Frames", String(fr.length)], ["Category", q.sub || "[add]"], ["Location", "[add]"], ["Commissioned by", "[add]"], ["Text", "[add a short note about this project]"]];
+    var rows = [["Project", q.t + (q.sub ? " / " + q.sub : "")], ["Date", q.date || "Oct. 31, 2026"], ["Frames", String(fr.length)], ["Category", q.cat || q.sub || "[add]"], ["Location", q.loc || "[add]"], ["Commissioned by", q.by || "[add]"], ["Text", q.text ? q.text.join("<br><br>") : "[add a short note about this project]"]];
     var pv = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length], nx = PROJECTS[(i + 1) % PROJECTS.length];
-    $("#pjSet").innerHTML = '<div class="s-head"><h1>' + q.t + '</h1><p class="mono">' + (q.sub ? q.sub + ' / ' : '') + 'Oct. 31 / 2026</p></div>' +
+    $("#pjSet").innerHTML = '<div class="s-head"><h1>' + q.t + '</h1><p class="mono">' + (q.sub ? q.sub + ' / ' : '') + (q.date || 'Oct. 31 / 2026') + '</p></div>' +
       '<div class="car" role="group" aria-roledescription="carousel" aria-label="Frames in this project"><div class="car-stage" id="pjStage"><button type="button" class="car-arrow prev" data-pj="-1" aria-label="Previous frame">&larr;</button><div id="pjImg" style="display:contents"></div><button type="button" class="car-arrow next" data-pj="1" aria-label="Next frame">&rarr;</button></div>' +
       '<div class="car-bar mono"><span class="car-count" id="pjCount" aria-live="polite"></span><span id="pjCap"></span></div></div>' +
       '<dl class="s-info mono">' + rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + '</dl>' +
